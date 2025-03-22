@@ -83,9 +83,16 @@
 }
 
 .changeAndRemoveLogo {
-    text-align: right;
+    /* text-align: right; */
     margin: 0; 
     padding: 5px; 
+    width: 55px;
     max-width: 70px;
-    width: 50%;
+    
+}
+
+.changeAndRemoveDiv {
+    display: flex;
+    justify-content: right;
+    /* text-align: justify; */
 }
