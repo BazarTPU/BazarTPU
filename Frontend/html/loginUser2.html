@@ -17,15 +17,26 @@
             </div>
             <div class="modal-body p-5 pt-0">
               <form class="">
-                <div class="form-floating mb-3">
-                  <input type="name" class="inputLoginUser1" placeholder="Имя пользователя">
+                <div class="mb-3 row">
+                  <label class="col-sm-3 col-form-label numberPhoneText" >Телефон</label>
+                  <div class="col-sm-9">
+                    <input type="input" class="inputLoginUser1 numberPhone" placeholder="78999999999">
+                  </div>
                 </div>
-                <div class="form-floating mb-3">
-                  <input type="password" class="inputLoginUser1" placeholder="Пароль">
+                <p class="numberPhoneText" style="font-size: 16px;">
+                  Можешь выбрать номер своего общежития , это поможет нам предлагать объявления рядом
+                </p>
+                <div class="">
+                  <select class=" selectLoginUser2">
+                    <option>Не из общежития</option>
+                    <option>Общежетие №1</option>
+                    <option>Общежетие №2</option>
+                    <option>Общежетие №...</option>
+                  </select>
                 </div>
                 <a href="indexB.html">
-                  <button class="w-100 mb-4 buttonLoginUser1" type="button" >
-                      Войти1
+                  <button class="w-100 mb-4 buttonLoginUser1 buttonLoginUser2" type="button" >
+                      Продолжить
                   </button>
                 </a>
                 <p class="textLoginUser1">
