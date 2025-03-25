@@ -80,3 +80,11 @@
     outline: none;
     margin-bottom: 20px;
 }
+
+.errorMessage {
+    margin: 0; 
+    padding: 0; 
+    /* text-align: center;  */
+    color: red; 
+    display: none;
+}
