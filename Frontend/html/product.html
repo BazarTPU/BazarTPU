@@ -81,7 +81,6 @@
                   <form class="needs-validation" novalidate="">
                     <div class="row g-3">
                         <div class="col-md-6" >
-                            
                             <div style="display: flex; justify-items: center;">
                                 <button class="backOrNextPhoto" onclick="go(0, 'simple')" type="button"><img src="../image/backPhoto.png" alt="Назад" style="width: 30px; "></button>
                                 <img src="../image/photoProduct1.png" id="currentPhoto" alt="" style="max-width: 100%;">
@@ -99,8 +98,8 @@
                             <textarea name="" id="" cols="100%" rows="10%" class="form-control textareaNewProduct" style="outline : none" readonly>Здесь будет описание объявление.</textarea>
                         </div>
                         <div class="col-12">
-                            <h5 class="mb-3" style="font-weight: bold">Цена</h5>
-                            <input class="form-control" readonly>
+                            <h5 class="mb-3" style="font-weight: bold;">Цена</h5>
+                            <input class="form-control" readonly style="border: 2px solid black;">
                         </div>
                         <div class="col-12">
                             <h5 class="mb-3" style="font-weight: bold;">Адрес</h5>
@@ -112,12 +111,15 @@
                               <div class="col-md-3">
                                 <img src="../image/noLogoItem900.png" class=" rounded-start" alt="" style="width: 90%; padding: 20px; padding-right: 0px;">
                               </div>
-                              <div class="col-md-7" >
+                              <div class="col-md-9" >
                                 <div class="card-body" >
                                     <h3 class="card-title chatTextNameSaler" style="font-weight: bold;">Имя продавца</h3>
-                                    <p class="card-text chatTextNameProduct" style="font-weight: bold;">Email/Tg</p>
-                                    <input class="form-control" style="border: 2px solid gray; border-radius: 8px;" placeholder="Example@youremail.com" readonly>
-                                    <a href="chat.html" ><button class="w-100 buttonProduct" style="margin-top: 20px;" type="button"><span class="buttonProductText">Открыть чат с продавцом</span></button></a>
+                                    <p class="card-text chatTextNameProduct" style="font-weight: bold; font-size: 20px;">Email/Tg</p>
+                                    <p class="card-text chatTextNameProduct" style="font-size: 20px;">iiv1@tpu.ru / @vanya</p>
+                                    <div style="display: flex; align-items: end; justify-content: end; height: 100px;">
+
+                                      <a href="chat.html"><button class=" buttonProduct" style="margin-top: 20px; width: 350px; " type="button"><span class="buttonProductText">Открыть чат с продавцом</span></button></a>
+                                    </div>
                                 </div>
                               </div>
                             </div>
