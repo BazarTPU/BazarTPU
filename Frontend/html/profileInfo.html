@@ -31,6 +31,14 @@
         let currentBtn = document.getElementById(buttonAcctive);
         currentBtn.classList.add('btnAcctive');
       }
+
+      function openChangeDiv(divIdOpen, divIdClose) {
+        let currentElement = document.getElementById(divIdClose);
+        currentElement.style.display = 'none';
+        currentElement = document.getElementById(divIdOpen);
+        currentElement.style.display = 'block';
+      } 
+
     </script>
 </head>
 <body>
@@ -80,16 +88,12 @@
                   Сообщения
                 </button>
               </a>
-              
-              
             </div>
-
 
             <div class="col-md-8 col-lg-9" id="divInfo">
               <div>
                 <img src="../image/noLogoItem900.png" class="img-thumbnail fotoProfile" alt="" >
               </div>
-              
               <div class="mb-3 row">
                 <label  class="col-sm-2 col-form-label " >Имя</label>
                 <div class="col-sm-10">
@@ -108,34 +112,64 @@
                   <input type="input" class="areaInfo" readonly value="iiv1@tpu.ru">
                 </div>
               </div>
-              <div class="mb-3 row">
-                <label  class="col-sm-2 col-form-label">Телефон</label>
-                <div class="col-sm-10">
-                  <input type="input" class="areaInfo" readonly value="78999999999">
+
+
+              <div id="infoStatic" style="display: block;">
+                <div class="mb-3 row">
+                  <label  class="col-sm-2 col-form-label">Телефон</label>
+                  <div class="col-sm-10">
+                    <input type="input" class="areaInfo" readonly value="78999999999">
+                  </div>
                 </div>
-              </div>
-              <div class="mb-3 row">
-                <label  class="col-sm-2 col-form-label">TG</label>
-                <div class="col-sm-10">
-                  <input type="input" class="areaInfo" readonly value="@vanya">
+                <div class="mb-3 row">
+                  <label  class="col-sm-2 col-form-label">TG</label>
+                  <div class="col-sm-10">
+                    <input type="input" class="areaInfo" readonly value="@vanya">
+                  </div>
                 </div>
-              </div>
-              <div class="mb-3 row">
-                <label  class="col-sm-2 col-form-label">Общежитие</label>
-                <div class="col-sm-10">
-                  <input type="input" class="areaInfo" readonly value="№14, Вершинина 39А">
+                <div class="mb-3 row">
+                  <label  class="col-sm-2 col-form-label">Общежитие</label>
+                  <div class="col-sm-10">
+                    <input type="input" class="areaInfo" readonly value="№14, Вершинина 39А">
+                  </div>
                 </div>
+                <a href="#" >
+                  <button class=" mb-2 buttonChange" onclick="openChangeDiv('infoChange', 'infoStatic')" type="button" style="margin-top: 10px; ">
+                      Изменить
+                  </button>
+                </a>
               </div>
-              <a href="#" >
-                <button class=" mb-2 buttonChange" type="button" style="margin-top: 10px; ">
-                    Изменить
-                </button>
-              </a>
-
-
-
-
               
+              <div id="infoChange" style="display: none;">
+                <div class="mb-3 row">
+                  <label  class="col-sm-2 col-form-label">Телефон</label>
+                  <div class="col-sm-10">
+                    <input type="input" class="areaInfo areaInfoChange" value="78999999999">
+                  </div>
+                </div>
+                <div class="mb-3 row">
+                  <label  class="col-sm-2 col-form-label">TG</label>
+                  <div class="col-sm-10">
+                    <input type="input" class="areaInfo areaInfoChange" value="@vanya">
+                  </div>
+                </div>
+                <div class="mb-3 row">
+                  <label  class="col-sm-2 col-form-label">Общежитие</label>
+                  <div class="col-sm-10">
+                    <input type="input" class="areaInfo areaInfoChange" value="№14, Вершинина 39А">
+                  </div>
+                </div>
+                <div>
+                  <button class=" mb-2 buttonChange" onclick="openChangeDiv('infoStatic', 'infoChange')" type="button" style="margin-top: 10px;">
+                    Сохранить
+                  </button>
+                </div>
+                <!-- <a href="#" style="display: flex;">
+                  <button class=" mb-2 buttonChange" type="button" style="margin-top: 10px; justify-content: end;">
+                      Сохранить
+                  </button>
+                </a> -->
+              </div>
               <p style="margin-top: 100%;"></p>
               <!-- <p>fewf</p> -->
               
