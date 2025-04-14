@@ -18,15 +18,7 @@
     height: 40px;
     font-weight: bold;
 }
-.btnAcctive {
-    /* width: 100%;
-    background: transparent; */
-    background: rgb(165, 165, 165);
-    /* border-radius: 7px; */
-    /* height: 40px; */
-    /* font-weight: bold; */
-    border: 1px solid black;
-}
+
 .btnNoAcctive {
     /* width: 100%;
     background: transparent; */
@@ -40,6 +32,16 @@
 .btnNoAcctive:hover {
     background: rgb(40,190,70);
     border: rgb(40,190,70);
+}
+
+.btnAcctive {
+    /* width: 100%;
+    background: transparent; */
+    background: rgb(165, 165, 165);
+    /* border-radius: 7px; */
+    /* height: 40px; */
+    /* font-weight: bold; */
+    border: 1px solid black;
 }
 
 .fotoProfile {

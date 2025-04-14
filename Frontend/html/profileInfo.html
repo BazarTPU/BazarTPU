@@ -8,6 +8,30 @@
     <link rel="stylesheet" href="../css/main.css">
     <!-- <link rel="stylesheet" href="../css/loginUser.css"> -->
     <link rel="stylesheet" href="../css/profile.css">
+    <script>
+      function moveProfile(openDiv, buttonAcctive) {
+        let listDivId = ['divInfo', 'divMessage', 'divMyProduct'];
+
+        for(let i = 0; i < listDivId.length; i++){
+          let currentDiv = document.getElementById(listDivId[i]);
+          currentDiv.style.display = 'none';
+        }
+        let currentDiv = document.getElementById(openDiv);
+        currentDiv.style.display = 'block';
+
+        let listBtnId = ['btnInfo', 'btnMessage', 'btnMyProduct'];
+        for(let i = 0; i < listBtnId.length; i++){
+          let currentBtn = document.getElementById(listBtnId[i]);
+
+          if(currentBtn.classList.contains('btnAcctive')) {
+            currentBtn.classList.remove('btnAcctive');
+            break;
+          }
+        }
+        let currentBtn = document.getElementById(buttonAcctive);
+        currentBtn.classList.add('btnAcctive');
+      }
+    </script>
 </head>
 <body>
     <header class=" text-bg-white " >
@@ -40,17 +64,19 @@
             <div class="col-md-4 col-lg-3 sections" >
               
               <a href="#">
-                <button class="w-100 mb-2 buttonSection btnAcctive" type="button" >
+                <button class="w-100 mb-2 buttonSection btnNoAcctive btnAcctive" id="btnInfo" type="button" onclick="moveProfile('divInfo', 'btnInfo')">
                     Информация
                 </button>
               </a>
-              <a href="profileMyProduct.html">
-                <button class="w-100 mb-2 buttonSection btnNoAcctive" type="button" >
+              <!-- profileMyProduct.html -->
+              <a href="#">
+                <button class="w-100 mb-2 buttonSection btnNoAcctive" id="btnMyProduct" type="button" onclick="moveProfile('divMyProduct', 'btnMyProduct')">
                     Мои объявления
                 </button>
               </a>
-              <a href="profileMessages.html">
-                <button class="w-100 mb-2 buttonSection btnNoAcctive" type="button" >
+              <!-- profileMessages.html -->
+              <a href="#">
+                <button class="w-100 mb-2 buttonSection btnNoAcctive" id="btnMessage" type="button" onclick="moveProfile('divMessage', 'btnMessage')">
                   Сообщения
                 </button>
               </a>
@@ -59,7 +85,7 @@
             </div>
 
 
-            <div class="col-md-8 col-lg-9">
+            <div class="col-md-8 col-lg-9" id="divInfo">
               <div>
                 <img src="../image/noLogoItem900.png" class="img-thumbnail fotoProfile" alt="" >
               </div>
@@ -114,12 +140,140 @@
               <!-- <p>fewf</p> -->
               
             </div>
-          </div>
-          
 
-          
+            <div class="col-md-8 col-lg-9" id="divMessage" style="display: none;"> 
+              <div class="row g-4 py-3 row-cols-1 row-cols-lg-12">
+                <div class="card mb-3" style="max-width: 100%; ">
+                  <div class="row g-0">
+                    <div class="col-md-3">
+                      <img src="../image/noLogoItem900.png" class=" rounded-start" alt="" style="width: 90%; padding: 20px; padding-right: 0px;">
+                    </div>
+                    <div class="col-md-7">
+                      <div class="card-body">
+                        <h5 class="card-title chatTextNameSaler">Имя продавца</h5>
+                        <p class="card-text chatTextNameProduct">Название</p>
+                        <p class="card-text chatTextPrice">Цена</p>
+                      </div>
+                    </div>
+                    <div class="col-md-2 changeAndRemoveDiv">
+                      <a href="" style="z-index: 2;"><button class="buttonRemoveChat" ><img src="../image/removeLogo.png" alt="" class="changeAndRemoveLogo"></button></a>
+                      <a href="chat.html" class="linkChat" ></a>
+                    </div>
+                  </div>
+                </div>
+                <div class="card mb-3 margin-top-0" style="max-width: 100%;">
+                  <div class="row g-0">
+                    <div class="col-md-3">
+                      <img src="../image/noLogoItem900.png" class=" rounded-start" alt="" style="width: 90%; padding: 20px; padding-right: 0px;">
+                    </div>
+                    <div class="col-md-7">
+                      <div class="card-body">
+                        <h5 class="card-title chatTextNameSaler">Имя продавца</h5>
+                        <p class="card-text chatTextNameProduct">Название</p>
+                        <p class="card-text chatTextPrice">Цена</p>
+                      </div>
+                    </div>
+                    <div class="col-md-2 changeAndRemoveDiv">
+                      <a href="" style="z-index: 2;"><button class="buttonRemoveChat" ><img src="../image/removeLogo.png" alt="" class="changeAndRemoveLogo"></button></a>
+                      <a href="chat.html" class="linkChat" ></a>
+                    </div>
+                  </div>
+                </div>
+                <div class="card mb-3 margin-top-0" style="max-width: 100%;">
+                  <div class="row g-0">
+                    <div class="col-md-3">
+                      <img src="../image/noLogoItem900.png" class=" rounded-start" alt="" style="width: 90%; padding: 20px; padding-right: 0px;">
+                    </div>
+                    <div class="col-md-7">
+                      <div class="card-body">
+                        <h5 class="card-title chatTextNameSaler">Имя продавца</h5>
+                        <p class="card-text chatTextNameProduct">Название</p>
+                        <p class="card-text chatTextPrice">Цена</p>
+                      </div>
+                    </div>
+                    <div class="col-md-2 changeAndRemoveDiv">
+                      <a href="" style="z-index: 2;"><button class="buttonRemoveChat" ><img src="../image/removeLogo.png" alt="" class="changeAndRemoveLogo"></button></a>
+                      <a href="chat.html" class="linkChat" ></a>
+                    </div>
+                  </div>
+                </div>
+                <p style="margin-top: 100%;"></p>
+                <!-- <p>fewf</p> -->
+              </div>
+            </div>
+
+            <div class="col-md-8 col-lg-9" id="divMyProduct" style="display: none;">
+                
+              <div class="row g-4 py-3 row-cols-1 row-cols-lg-12">
+                <!-- Первая карточка -->
+                <div class="card mb-3" style="max-width: 100%; ">
+                  <div class="row g-0">
+                    <div class="col-md-3">
+                      <img src="../image/noLogoItem900.png" class=" rounded-start" alt="" style="width: 90%; padding: 20px; padding-right: 0px;">
+                    </div>
+                    <div class="col-md-7">
+                      <div class="card-body">
+                        <h5 class="card-title textProduct">Название</h5>
+                        <p class="card-text textProduct">Цена</p>
+                        <p class="card-text textProduct"><small class="text-muted">Просмотры: 2</small></p>
+                      </div>
+                    </div>
+                    <div class="col-md-2 changeAndRemoveDiv" >
+                      <a href="newProduct.html"><img src="../image/changeLogo.png" alt="" class="changeAndRemoveLogo"></a>
+                      <a href="#"><img src="../image/removeLogo.png" alt="" class="changeAndRemoveLogo"></a>
+                    </div>
+                  </div>
+                </div>
+                <!-- Вторая карточка -->
+                <div class="card mb-3" style="max-width: 100%; ">
+                  <div class="row g-0">
+                    <div class="col-md-3">
+                      <img src="../image/noLogoItem900.png" class=" rounded-start" alt="" style="width: 90%; padding: 20px; padding-right: 0px;">
+                    </div>
+                    <div class="col-md-7">
+                      <div class="card-body">
+                        <h5 class="card-title textProduct">Название</h5>
+                        <p class="card-text textProduct">Цена</p>
+                        <p class="card-text textProduct"><small class="text-muted">Просмотры: 2</small></p>
+                      </div>
+                    </div>
+                    <div class="col-md-2 changeAndRemoveDiv" >
+                      <a href="newProduct.html"><img src="../image/changeLogo.png" alt="" class="changeAndRemoveLogo"></a>
+                      <a href="#"><img src="../image/removeLogo.png" alt="" class="changeAndRemoveLogo"></a>
+                    </div>
+                  </div>
+                </div>
+                <!-- Третья карточка -->
+                <div class="card mb-3" style="max-width: 100%; ">
+                  <div class="row g-0">
+                    <div class="col-md-3">
+                      <img src="../image/noLogoItem900.png" class=" rounded-start" alt="" style="width: 90%; padding: 20px; padding-right: 0px;">
+                    </div>
+                    <div class="col-md-7">
+                      <div class="card-body">
+                        <h5 class="card-title textProduct">Название</h5>
+                        <p class="card-text textProduct">Цена</p>
+                        <p class="card-text textProduct"><small class="text-muted">Просмотры: 2</small></p>
+                      </div>
+                    </div>
+                    <div class="col-md-2 changeAndRemoveDiv" >
+                      <a href="newProduct.html"><img src="../image/changeLogo.png" alt="" class="changeAndRemoveLogo"></a>
+                      <a href="#"><img src="../image/removeLogo.png" alt="" class="changeAndRemoveLogo"></a>
+                    </div>
+                  </div>
+                </div>
+
+
+
+
+
+                <p style="margin-top: 100%;"></p>
+                <!-- <p>fewf</p> -->
+              
+              </div>
+            </div>
+
         </div>
-        
     </main>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
