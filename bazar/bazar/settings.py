@@ -84,10 +84,10 @@ WSGI_APPLICATION = 'bazar.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'bazartpudb',
+        'NAME': os.getenv('MYSQL_DATABASE', 'bazar'),
         'USER': 'root',
-        'PASSWORD': 'F123455252',
-        'HOST': '127.0.0.1',
+        'PASSWORD': os.getenv('MYSQL_ROOT_PASSWORD', 'password'),
+        'HOST': os.getenv('MYSQL_HOST', 'db'),
         'PORT': '3306',
     }
 }
