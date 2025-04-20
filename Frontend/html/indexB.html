@@ -8,20 +8,55 @@
     <link rel="stylesheet" href="../css/main.css">
     <script>
       window.onload = () => {
-        // Весь код отсюда будет выполнен, только когда полностью завершится загрузка страницы
-        let allProduct = document.getElementById('allProduct');
-        let oneProduct = document.getElementById('oneProduct');
-        // oneProduct.removeAttribute('id');
-        for(let i = 0; i < 9; i++){
-          // allProduct.appendChild(oneProduct);
-          let clone = oneProduct.cloneNode(true);
-          // Удаляем или изменяем id, чтобы не было дублирования
-          clone.removeAttribute('id');
-          // Или, например, задать новый id:
-          // clone.id = 'oneProduct' + i;
-          allProduct.appendChild(clone);
+
+        categories_list = ['Учеба','Техника','Электроника','Работа','Кухня','Спорт','Еда','Услуги','Мебель','Гардероб','Другое']
+
+        function cloneCard(idParent, idCard, count) {
+          let allProduct = document.getElementById(idParent);
+          let oneProduct = document.getElementById(idCard);
+          
+          
+          for(let i = 1; i < count; i++){
+            let clone = oneProduct.cloneNode(true);
+            clone.removeAttribute('id');
+            allProduct.appendChild(clone);
+          } 
+          if(idParent=='idCategoryParent'){
+            let p_list = document.getElementsByClassName('classP');
+            let button_list = document.getElementsByClassName('classButton');
+            // console.log(p_list)
+            for(let i = 0; i < count; i++){
+              
+              p_list[i].innerHTML = categories_list[i];
+              button_list[i].classList.add(i);
+            } 
+          }
         }
+        cloneCard('idCategoryParent','idCategory',categories_list.length);
+        cloneCard('allProduct','oneProduct',20);
       };
+
+
+      function goThisCategory(object, nameButton) {
+        let divCategories = document.getElementById('custom-cards');
+        divCategories.style.display = 'none';
+        let h2 = document.getElementById('productsAround');
+        if(nameButton == 'product') {
+          h2.innerHTML = categories_list[object.classList[1]];
+        } else {
+          h2.innerHTML = nameButton;
+          let fotoMain = document.getElementById('fotoMain');
+          fotoMain.style.display = 'none';
+        }
+
+        // h2.innerHTML = categories_list[object.classList[1]];
+        // console.log(h2);
+      }
+
+      function findProduct() {
+
+      }
+
     </script>
 </head>
 <body>
@@ -37,6 +72,8 @@
     
             <form class="col-12 col-lg-3 mb-3 mb-lg-0 me-lg-3 inputMainLocation" role="search">
               <input type="search" class=" inputMain " placeholder="Поиск" ><!-- form-control-->
+              
+              <a href="resultFind.html" class="inputMainLupa"><img src="../image/Lupa.webp" alt="" style="width: 80%;"></a>
               <!-- <img src="image/Lupa.webp" alt="" class="lupa" height="35px"> -->
             </form>
             
@@ -50,126 +87,49 @@
     </header>
     <main class=" ">
         <div class="container main2">
-            <div class="fotoMain">
+            <div id="fotoMain" class="fotoMain">
                 <img src="../image/noLogoItem.webp" alt="noLogo" width="100%">
             </div>
             <div class="container px-4 py-5" id="custom-cards">
                 <h2 class="category">Категории</h2>
             
-                <div class="row row-cols-1 row-cols-lg-6 align-items-stretch g-4 py-5">
-                  <div class="col">
-                    <div class=" overflow-hidden itemBorder ">
-                      <div class="d-flex flex-column h-100 ">
-                        <!-- <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">Short title, long jacket</h3> -->
-                        <img src="../image/noLogoItem900.png" alt="" class="">
-                        <p class="itemText">Название</p>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col">
-                    <div class=" overflow-hidden itemBorder ">
-                      <div class="d-flex flex-column h-100 ">
-                        <!-- <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">Short title, long jacket</h3> -->
-                        <img src="../image/noLogoItem900.png" alt="" class="">
-                        <p class="itemText">Название</p>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col">
-                    <div class=" overflow-hidden itemBorder ">
-                      <div class="d-flex flex-column h-100 ">
-                        <!-- <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">Short title, long jacket</h3> -->
-                        <img src="../image/noLogoItem900.png" alt="" class="">
-                        <p class="itemText">Название</p>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col">
-                    <div class=" overflow-hidden itemBorder ">
-                      <div class="d-flex flex-column h-100 ">
-                        <!-- <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">Short title, long jacket</h3> -->
-                        <img src="../image/noLogoItem900.png" alt="" class="">
-                        <p class="itemText">Название</p>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col">
-                    <div class=" overflow-hidden itemBorder ">
-                      <div class="d-flex flex-column h-100 ">
-                        <!-- <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">Short title, long jacket</h3> -->
-                        <img src="../image/noLogoItem900.png" alt="" class="">
-                        <p class="itemText">Название</p>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col">
-                    <div class=" overflow-hidden itemBorder ">
-                      <div class="d-flex flex-column h-100 ">
-                        <!-- <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">Short title, long jacket</h3> -->
-                        <img src="../image/noLogoItem900.png" alt="" class="">
-                        <p class="itemText">Название</p>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col">
-                    <div class=" overflow-hidden itemBorder ">
-                      <div class="d-flex flex-column h-100 ">
-                        <!-- <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">Short title, long jacket</h3> -->
-                        <img src="../image/noLogoItem900.png" alt="" class="">
-                        <p class="itemText">Название</p>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col">
-                    <div class=" overflow-hidden itemBorder ">
-                      <div class="d-flex flex-column h-100 ">
-                        <!-- <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">Short title, long jacket</h3> -->
-                        <img src="../image/noLogoItem900.png" alt="" class="">
-                        <p class="itemText">Название</p>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col">
-                    <div class=" overflow-hidden itemBorder ">
-                      <div class="d-flex flex-column h-100 ">
-                        <!-- <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">Short title, long jacket</h3> -->
-                        <img src="../image/noLogoItem900.png" alt="" class="">
-                        <p class="itemText">Название</p>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col">
-                    <div class=" overflow-hidden itemBorder ">
-                      <div class="d-flex flex-column h-100 ">
-                        <!-- <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">Short title, long jacket</h3> -->
-                        <img src="../image/noLogoItem900.png" alt="" class="">
-                        <p class="itemText">Название</p>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col">
-                    <div class=" overflow-hidden itemBorder ">
-                      <div class="d-flex flex-column h-100 ">
-                        <!-- <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">Short title, long jacket</h3> -->
-                        <img src="../image/noLogoItem900.png" alt="" class="">
-                        <p class="itemText">Название</p>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col ">
-                    <div class=" overflow-hidden itemBorder ">
-                      <div class="d-flex flex-column h-100 ">
-                        <!-- <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">Short title, long jacket</h3> -->
-                        <img src="../image/noLogoItem900.png" alt="" class="">
-                        <p class="itemText">Название</p>
-                      </div>
-                    </div>
-                  </div>
+                <div id="idCategoryParent" class="row row-cols-1 row-cols-lg-6 align-items-stretch g-4 py-5">
                   
+                  <button type="button" class="classButton" id="idCategory" onclick="goThisCategory(this, 'product')" style="background: transparent; outline: none; border: none;">
+                    <div class="col">
+                      <div class=" overflow-hidden itemBorder ">
+                        <div class="d-flex flex-column h-100 ">
+                          <img src="../image/noLogoItem900.png" alt="" class="">
+                          <p class="itemText classP">Учеба</p>
+                        </div>
+                      </div>
+                    </div>
+                  </button>
+
+                  <!-- <a href="#" id="idCategory" style="text-decoration: none; color: black;">
+                    <div class="col">
+                      <div class=" overflow-hidden itemBorder ">
+                        <div class="d-flex flex-column h-100 ">
+                          <img src="../image/noLogoItem900.png" alt="" class="">
+                          <p class="itemText">Название</p>
+                        </div>
+                      </div>
+                    </div>
+                  </a> -->
+
+                  <!-- <div id="idCategory" class="col">
+                    <div class=" overflow-hidden itemBorder ">
+                      <div class="d-flex flex-column h-100 ">
+                        <img src="../image/noLogoItem900.png" alt="" class="">
+                        <p class="itemText">Название</p>
+                      </div>
+                    </div>
+                  </div> -->
+
                 </div>
             </div>
             <div class="container px-4 py-5" id="custom-cards">
-                <h2 class="announcementAround">Объявления рядом</h2>
+                <h2 id="productsAround" class="announcementAround">Объявления рядом</h2>
             
                 <div id="allProduct" class="row row-cols-1 row-cols-lg-5 align-items-stretch g-4 py-5">
                   <div class="col product" id="oneProduct">
